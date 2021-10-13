@@ -1,14 +1,22 @@
-version: "3.8"
+version: "3.7"
 
 services:
-    nodeserver:
-        build:
-            context: ./frontend
-        ports:
-            - "3000:3000"
-    nginx:
-        restart: always
-        build:
-            context: ./nginx
-        ports:
-            - "80:80"
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "4000:4000"
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"

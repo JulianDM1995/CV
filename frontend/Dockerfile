@@ -6,7 +6,7 @@
 FROM node
 WORKDIR /app
 COPY package.json yarn.lock ./
-RUN yarn install --production
+RUN yarn install
 COPY . .
-RUN echo "Imagen creada - JDM"
+RUN echo "Imagen creada para el frontend - JDM"
 CMD ["yarn","start"]
